@@ -1,0 +1,59 @@
+{
+  "coverage_by_case_or_test": {
+    "GW-NEG-001": [
+      "PROMPT_INJECTION_BLOCK"
+    ],
+    "GW-NEG-002": [
+      "INVALID_TOKEN_REJECTED"
+    ],
+    "KYC-HIGH-001": [
+      "HIGH_DENIED_UNAPPROVED_SOURCE",
+      "DENIED_DELETE_EVIDENCE",
+      "ALLOWED_SCREEN_ENTITY",
+      "POLICY_DENIAL",
+      "PII_MASKING",
+      "CORRELATION_ID_TELEMETRY",
+      "AUDIT_HASH_CHAIN"
+    ],
+    "KYC-LOW-001": [
+      "LOW_CLEAN_PASS",
+      "ALLOWED_SCREEN_ENTITY",
+      "ALLOWED_APPROVED_SOURCE",
+      "ALLOWED_GENERATE_REPORT",
+      "PII_MASKING",
+      "CORRELATION_ID_TELEMETRY",
+      "AUDIT_HASH_CHAIN"
+    ],
+    "KYC-MED-001": [
+      "MEDIUM_MATCH_JUSTIFICATION",
+      "ALLOWED_SCREEN_ENTITY",
+      "ALLOWED_APPROVED_SOURCE",
+      "JUSTIFICATION_OVERRIDE_MATCH",
+      "ALLOWED_GENERATE_REPORT",
+      "PII_MASKING",
+      "CORRELATION_ID_TELEMETRY",
+      "AUDIT_HASH_CHAIN"
+    ]
+  },
+  "coverage_complete": true,
+  "covered_scenario_count": 14,
+  "covered_scenarios": [
+    "ALLOWED_APPROVED_SOURCE",
+    "ALLOWED_GENERATE_REPORT",
+    "ALLOWED_SCREEN_ENTITY",
+    "AUDIT_HASH_CHAIN",
+    "CORRELATION_ID_TELEMETRY",
+    "DENIED_DELETE_EVIDENCE",
+    "HIGH_DENIED_UNAPPROVED_SOURCE",
+    "INVALID_TOKEN_REJECTED",
+    "JUSTIFICATION_OVERRIDE_MATCH",
+    "LOW_CLEAN_PASS",
+    "MEDIUM_MATCH_JUSTIFICATION",
+    "PII_MASKING",
+    "POLICY_DENIAL",
+    "PROMPT_INJECTION_BLOCK"
+  ],
+  "generated_at_utc": "2026-06-29T00:00:00Z",
+  "missing_scenarios": [],
+  "required_scenario_count": 14
+}

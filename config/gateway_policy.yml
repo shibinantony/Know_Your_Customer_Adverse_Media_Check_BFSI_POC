@@ -1,0 +1,51 @@
+gateway:
+  policy_id: citadel-gateway-amc-local-v1
+  version: 1.0.0
+  host: 0.0.0.0
+  port: 8000
+  audit:
+    sqlite_path: logs/audit_chain.sqlite3
+    jsonl_path: logs/audit_chain.jsonl
+  model:
+    provider: mock
+    mock_model_name: citadel-mock-amc-v1
+    timeout_seconds: 20
+  security:
+    require_bearer_token: true
+    block_prompt_injection: true
+    mask_pii_before_model: true
+    max_body_bytes: 65536
+
+tokens:
+  - client_id: amc-agent-local
+    actor: amc_agent
+    token_hash: b40ddda1a5bfd4c5d79d89e4e8fafb1faf68543c31a3d68b7becfccc913bbaa9
+    quota:
+      requests_per_minute: 120
+      requests_per_day: 1000
+
+prompt_injection_patterns:
+  - name: ignore_prior_instructions
+    pattern: '\b(ignore|disregard|override)\b.{0,120}\b(previous|prior|above|system|developer|instructions)\b'
+  - name: reveal_hidden_prompt
+    pattern: '\b(reveal|print|show|exfiltrate)\b.{0,120}\b(system prompt|developer message|hidden instructions|secret|secrets|credentials)\b'
+  - name: jailbreak_mode
+    pattern: '\b(jailbreak|dan mode|do anything now|developer mode)\b'
+  - name: script_injection
+    pattern: '<\s*/?\s*script\b'
+  - name: destructive_log_instruction
+    pattern: '\b(delete|erase|tamper|disable)\b.{0,80}\b(audit|logs?|telemetry|evidence)\b'
+
+pii_patterns:
+  - name: email
+    pattern: '\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b'
+    replacement: '[EMAIL_MASKED]'
+  - name: uae_emirates_id
+    pattern: '\b784-\d{4}-\d{7}-\d\b'
+    replacement: '[EMIRATES_ID_MASKED]'
+  - name: iban
+    pattern: '\b[A-Z]{2}\d{2}[A-Z0-9]{11,30}\b'
+    replacement: '[IBAN_MASKED]'
+  - name: phone
+    pattern: '(?<!\d)(?:\+?\d[\d\s().-]{7,}\d)(?!\d)'
+    replacement: '[PHONE_MASKED]'

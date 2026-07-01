@@ -1,0 +1,166 @@
+[
+  {
+    "action_sequence": [
+      "screen_entity",
+      "search_approved_source",
+      "generate_report"
+    ],
+    "adverse_media_notes": [
+      "Approved registry profile is clean.",
+      "Approved news archive has no exact or near-name adverse hits."
+    ],
+    "beneficial_owners": [
+      {
+        "name": "Noura Saleh",
+        "ownership": "80%",
+        "pep_status": "Not PEP",
+        "role": "Managing partner"
+      },
+      {
+        "name": "Omar Saleh",
+        "ownership": "20%",
+        "pep_status": "Not PEP",
+        "role": "Silent partner"
+      }
+    ],
+    "documents_received": [
+      "Synthetic trade license",
+      "Synthetic certificate of incorporation",
+      "Synthetic beneficial ownership declaration",
+      "Synthetic bank reference letter"
+    ],
+    "entity_id": "AMC-001",
+    "entity_name": "Noura Al Noor Trading FZE",
+    "expected_activity": "Monthly domestic supplier payments and low-value regional receipts.",
+    "expected_outcome": "Clean pass with allowed actions only.",
+    "jurisdiction": "UAE synthetic free zone",
+    "kyc_case_id": "KYC-LOW-001",
+    "legal_form": "Free zone establishment",
+    "onboarding_channel": "relationship_manager_portal",
+    "persona": "LOW",
+    "required_justification": "",
+    "scenario_tags": [
+      "LOW_CLEAN_PASS",
+      "ALLOWED_SCREEN_ENTITY",
+      "ALLOWED_APPROVED_SOURCE",
+      "ALLOWED_GENERATE_REPORT",
+      "PII_MASKING",
+      "CORRELATION_ID_TELEMETRY",
+      "AUDIT_HASH_CHAIN"
+    ],
+    "source_of_funds": "Operating revenue from synthetic wholesale trading.",
+    "source_of_wealth": "Founder capital contribution and retained earnings.",
+    "synthetic_email": "clean.profile@example.test",
+    "synthetic_emirates_id": "784-1990-1234567-1",
+    "synthetic_iban": "AE070331234567890123456",
+    "synthetic_phone": "+971 50 100 2001"
+  },
+  {
+    "action_sequence": [
+      "screen_entity",
+      "search_approved_source",
+      "override_match",
+      "generate_report"
+    ],
+    "adverse_media_notes": [
+      "Approved news archive returns a synthetic near-name match.",
+      "The match is not conclusive and requires analyst override rationale."
+    ],
+    "beneficial_owners": [
+      {
+        "name": "Samir Haddad",
+        "ownership": "65%",
+        "pep_status": "Not PEP",
+        "role": "Chairman"
+      },
+      {
+        "name": "Lina Haddad",
+        "ownership": "35%",
+        "pep_status": "Not PEP",
+        "role": "Director"
+      }
+    ],
+    "documents_received": [
+      "Synthetic commercial registration",
+      "Synthetic board resolution",
+      "Synthetic ownership chart",
+      "Synthetic source-of-wealth attestation"
+    ],
+    "entity_id": "AMC-002",
+    "entity_name": "Samir Haddad Holdings",
+    "expected_activity": "Regional consulting invoices and investment subscription flows.",
+    "expected_outcome": "Name-match review completes only after override justification is logged.",
+    "jurisdiction": "UAE synthetic mainland",
+    "kyc_case_id": "KYC-MED-001",
+    "legal_form": "Private holding company",
+    "onboarding_channel": "digital_kyc_portal",
+    "persona": "MEDIUM",
+    "required_justification": "Synthetic near-name match requires analyst review before clearing the entity.",
+    "scenario_tags": [
+      "MEDIUM_MATCH_JUSTIFICATION",
+      "ALLOWED_SCREEN_ENTITY",
+      "ALLOWED_APPROVED_SOURCE",
+      "JUSTIFICATION_OVERRIDE_MATCH",
+      "ALLOWED_GENERATE_REPORT",
+      "PII_MASKING",
+      "CORRELATION_ID_TELEMETRY",
+      "AUDIT_HASH_CHAIN"
+    ],
+    "source_of_funds": "Synthetic consulting revenue and intercompany dividends.",
+    "source_of_wealth": "Synthetic family office investment proceeds.",
+    "synthetic_email": "review.queue@example.test",
+    "synthetic_emirates_id": "784-1985-7654321-2",
+    "synthetic_iban": "AE550331234567890987654",
+    "synthetic_phone": "+971 50 100 2002"
+  },
+  {
+    "action_sequence": [
+      "screen_entity",
+      "search_unapproved_source",
+      "delete_evidence",
+      "generate_report"
+    ],
+    "adverse_media_notes": [
+      "Source request points to an unapproved synthetic evidence source.",
+      "Action sequence intentionally asks for evidence deletion to prove policy denial."
+    ],
+    "beneficial_owners": [
+      {
+        "name": "Mira Kareem",
+        "ownership": "100%",
+        "pep_status": "Synthetic escalation required",
+        "role": "Owner"
+      }
+    ],
+    "documents_received": [
+      "Synthetic expired trade license copy",
+      "Synthetic incomplete ownership declaration",
+      "Synthetic inconsistent source-of-funds note"
+    ],
+    "entity_id": "AMC-003",
+    "entity_name": "Mira K. Sanctions Test",
+    "expected_activity": "High-value cross-border transfers inconsistent with stated profile.",
+    "expected_outcome": "Flow blocks at denied source/evidence action and still emits governed evidence.",
+    "jurisdiction": "UAE synthetic mainland",
+    "kyc_case_id": "KYC-HIGH-001",
+    "legal_form": "Single-owner synthetic consultancy",
+    "onboarding_channel": "batch_upload",
+    "persona": "HIGH",
+    "required_justification": "Synthetic high-risk trigger demonstrates denied action handling.",
+    "scenario_tags": [
+      "HIGH_DENIED_UNAPPROVED_SOURCE",
+      "DENIED_DELETE_EVIDENCE",
+      "ALLOWED_SCREEN_ENTITY",
+      "POLICY_DENIAL",
+      "PII_MASKING",
+      "CORRELATION_ID_TELEMETRY",
+      "AUDIT_HASH_CHAIN"
+    ],
+    "source_of_funds": "Unverified synthetic cross-border advisory income.",
+    "source_of_wealth": "Unclear synthetic capital source requiring escalation.",
+    "synthetic_email": "denied.path@example.test",
+    "synthetic_emirates_id": "784-1978-0001112-3",
+    "synthetic_iban": "AE340331234567890111222",
+    "synthetic_phone": "+971 50 100 2003"
+  }
+]

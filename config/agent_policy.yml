@@ -1,0 +1,32 @@
+policy_id: citadel-agt-amc-local-v1
+version: 1.0.0
+default_effect: deny
+description: Local-first AGT-style action governance for synthetic AMC screening.
+
+actions:
+  screen_entity:
+    effect: allow
+    reason: baseline entity screening is allowed against synthetic intake records
+  search_approved_source:
+    effect: allow
+    reason: evidence lookup is restricted to approved synthetic source labels
+  generate_report:
+    effect: allow
+    reason: deterministic synthetic PDF reporting is allowed
+  assign_high_risk:
+    effect: justification_required
+    reason: high-risk assignment must include analyst rationale
+  override_match:
+    effect: justification_required
+    reason: possible name-match override requires analyst rationale
+  search_unapproved_source:
+    effect: deny
+    reason: source is outside the approved synthetic AMC evidence boundary
+  delete_evidence:
+    effect: deny
+    reason: evidence deletion is prohibited by immutable audit requirements
+
+audit:
+  log_allowed: true
+  log_justification: true
+  log_denied: true
