@@ -4,7 +4,7 @@ This repository is a VM-native proof of concept for the CITADEL gateway pattern 
 
 Flow: `AMC Agent -> Governed AI Gateway (CITADEL) -> Mock AMC Model -> AGT Policy Engine -> Tamper-Evident Audit -> PDF Reports`
 
-The implementation has no Azure tenant dependency, no ADIB tenant dependency, no Docker dependency, and no real customer data.
+The implementation has no Azure tenant dependency, no tenant dependency, no Docker dependency, and no real customer data.
 
 ## Quick Start On Ubuntu VM
 
