@@ -1,5 +1,5 @@
 gateway:
-  policy_id: citadel-gateway-amc-local-v1
+  policy_id: governed-kyc-gateway-local-v1
   version: 1.0.0
   host: 0.0.0.0
   port: 8000
@@ -8,7 +8,7 @@ gateway:
     jsonl_path: logs/audit_chain.jsonl
   model:
     provider: mock
-    mock_model_name: citadel-mock-amc-v1
+    mock_model_name: governed-kyc-mock-v1
     timeout_seconds: 20
   security:
     require_bearer_token: true
@@ -17,8 +17,8 @@ gateway:
     max_body_bytes: 65536
 
 tokens:
-  - client_id: amc-agent-local
-    actor: amc_agent
+  - client_id: kyc-agent-local
+    actor: kyc_agent
     token_hash: b40ddda1a5bfd4c5d79d89e4e8fafb1faf68543c31a3d68b7becfccc913bbaa9
     quota:
       requests_per_minute: 120
@@ -40,9 +40,9 @@ pii_patterns:
   - name: email
     pattern: '\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b'
     replacement: '[EMAIL_MASKED]'
-  - name: uae_emirates_id
+  - name: government_id
     pattern: '\b784-\d{4}-\d{7}-\d\b'
-    replacement: '[EMIRATES_ID_MASKED]'
+    replacement: '[GOVERNMENT_ID_MASKED]'
   - name: iban
     pattern: '\b[A-Z]{2}\d{2}[A-Z0-9]{11,30}\b'
     replacement: '[IBAN_MASKED]'
